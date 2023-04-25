@@ -11,8 +11,8 @@ int encryptData(unsigned long m, unsigned long c, int ch, unsigned long x);
 int decryptData(unsigned long m, unsigned long c, int ch, unsigned long x);
 
 int main() {
-    freopen("cipherdata.in", "r", stdin);
-    freopen("cipherdata.out", "w", stdout);
+
+    
     int c, currentPos, action, lineNum, error;
     unsigned long m, ci, random;
     currentPos = action = error = 0;
