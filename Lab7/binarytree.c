@@ -97,7 +97,7 @@ void printTreeWithNewLine(struct TreeNode* root) {
         return;
     }
     printTreeWithNewLine(root->left);
-    printf("%c", root->data);
+    printf("%c ", root->data);
     printTreeWithNewLine(root->right);
 }
 
@@ -106,18 +106,23 @@ void printTree(struct TreeNode* root) {
     printf("\n"); 
 }
 
-void printLeaves(struct TreeNode* root) {
+void printLeavesWithNewLine(struct TreeNode* root) {
     if (root == NULL) {
         return;
     }
     if (root->left == NULL && root->right == NULL) {
         printf("%c ", root->data);
     }
-    printLeaves(root->left);
-    printLeaves(root->right);
+    printLeavesWithNewLine(root->left);
+    printLeavesWithNewLine(root->right);
 }
 
-void printTreeVerbose(struct TreeNode* root) {
+void printLeaves(struct TreeNode* root){
+    printLeavesWithNewLine(root);
+    printf("\n"); 
+}
+
+void printTreeVerboseWithNewLine(struct TreeNode* root) {
     int current_depth;
     static int depth = 1;
     if (root == NULL) {
@@ -126,13 +131,17 @@ void printTreeVerbose(struct TreeNode* root) {
     current_depth = depth;
     printf("(%c,%d) ", root->data, current_depth);
     depth++;
-    printTreeVerbose(root->left);
+    printTreeVerboseWithNewLine(root->left);
     depth--;
     depth++;
-    printTreeVerbose(root->right);
+    printTreeVerboseWithNewLine(root->right);
     depth--;
 }
 
+void printTreeVerbose(struct TreeNode* root) {
+    printTreeVerboseWithNewLine(root);
+    printf("\n"); 
+}
 void freeTree(struct TreeNode* root) {
     if (root == NULL) {
         return;
