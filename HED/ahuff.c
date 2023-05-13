@@ -1,16 +1,8 @@
-/**********************************************/
-/*Himanshu Chaudhary                          */
-/*May 11, 2016                                */
-/*CS 241L    Section #003                     */
-/**********************************************/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "huffman.h"
 
-
-/*the index represents the char value of a symbol*/
 unsigned long frequency[255]; 
 int queueLength = 0;
 struct huffTree *tree[256]; 
